@@ -1,3 +1,4 @@
+// $codepro.audit.disable
 package edu.towson.cis.cosc603.project5.coffeemaker;
 
 /**
