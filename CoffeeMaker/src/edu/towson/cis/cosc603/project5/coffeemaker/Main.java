@@ -11,6 +11,11 @@ import java.io.InputStreamReader;
  */
 public class Main {
     private static CoffeeMaker coffeeMaker;
+    public static void main(String[] args) {
+	    coffeeMaker = new CoffeeMaker();
+	    System.out.println("Welcome to the CoffeeMaker!\n");
+	    mainMenu();
+	}
 
     public static void mainMenu() {
         System.out.println("1. Add a recipe");
@@ -168,8 +173,12 @@ public class Main {
         
         boolean recipeEdited = coffeeMaker.editRecipe(oldRecipe, newRecipe);
         
-        if(recipeEdited) System.out.println(oldRecipe.getName() + " successfully edited.");
-	    else System.out.println(oldRecipe.getName() + "could not be edited.");
+        if(recipeEdited){
+        	System.out.println(oldRecipe.getName() + " successfully edited.");
+        }
+	    else{
+	    	System.out.println(oldRecipe.getName() + "could not be edited.");
+	    }
         
         mainMenu();
     }
@@ -203,7 +212,8 @@ public class Main {
 	    	mainMenu();
 	    }
 	    
-        coffeeMaker.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
+        coffeeMaker.addInventory(amtCoffee, amtMilk);
+        coffeeMaker.addInventory2( amtSugar, amtChocolate);
         mainMenu();
     }
     
@@ -276,9 +286,5 @@ public class Main {
      * Method main.
      * @param args String[]
      */
-    public static void main(String[] args) {
-	    coffeeMaker = new CoffeeMaker();
-	    System.out.println("Welcome to the CoffeeMaker!\n");
-	    mainMenu();
-	}
+    
 }
